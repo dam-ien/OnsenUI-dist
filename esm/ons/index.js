@@ -1,3 +1,4 @@
+import _setImmediate from 'babel-runtime/core-js/set-immediate';
 import _extends from 'babel-runtime/helpers/extends';
 import _typeof from 'babel-runtime/helpers/typeof';
 import _Promise from 'babel-runtime/core-js/promise';
@@ -544,11 +545,9 @@ function waitDeviceReady() {
     }
   };
   if (document.readyState === 'complete' || document.readyState === 'loaded' || document.readyState === 'interactive') {
-    execUnlock();
+    _setImmediate(execUnlock);
   } else {
-    window.addEventListener('DOMContentLoaded', function () {
-      return execUnlock();
-    }, false);
+    window.addEventListener('DOMContentLoaded', execUnlock, false);
   }
 }
 
