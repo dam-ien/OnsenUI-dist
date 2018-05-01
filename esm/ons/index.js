@@ -546,7 +546,9 @@ function waitDeviceReady() {
   if (document.readyState === 'complete' || document.readyState === 'loaded' || document.readyState === 'interactive') {
     execUnlock();
   } else {
-    window.addEventListener('DOMContentLoaded', execUnlock, false);
+    window.addEventListener('DOMContentLoaded', function () {
+      return execUnlock();
+    }, false);
   }
 }
 

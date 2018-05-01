@@ -1,4 +1,4 @@
-/* angular-onsenui v2.9.2 - 2018-04-30 */
+/* angular-onsenui v2.9.2 - 2018-05-01 */
 
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
